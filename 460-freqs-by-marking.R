@@ -1,6 +1,6 @@
 library(XML)
 doc <- xmlTreeParse("460.xml", useInternalNodes=TRUE)
-divs.ns.l <- getNodeSet(doc, "/body//*[@*='checkmark']")
+divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM'][@*='checkmark']")
 divs.ns.l
 div.freqs.l <- list()
 div.raws.l <- list()
