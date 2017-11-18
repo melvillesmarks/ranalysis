@@ -2,7 +2,7 @@
 
 library(XML)
 doc <- xmlTreeParse("460.xml", useInternalNodes=TRUE)
-divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM']")
+divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM'][not(contains(@mode, 'commentary'))][not(contains(@type, 'notation'))]")
 divs.ns.l
 div.freqs.l <- list()
 div.raws.l <- list()
@@ -51,4 +51,5 @@ ttr.l <- lapply(div.raws.l, function(x) {length(x)/sum(x)*100})
 ttr.m <- do.call(rbind, ttr.l)
 ttr.m[order(ttr.m, decreasing = TRUE),]
 plot(ttr.m, type = "h", main = "Type-token ratios in Melville's markings in Shakespeare",
-     ylab = "lexical variety", xlab = "node (each instance of marking)")
+     ylab = "lexical variety", xlab = "node (each instance of marking): 
+     1-295, comedies; 296-363, histories; 364-703, tragedies")
