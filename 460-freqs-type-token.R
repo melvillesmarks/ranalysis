@@ -36,12 +36,14 @@ mean.word.use.m <- do.call(rbind, lapply(div.raws.l,mean))
 dim(mean.word.use.m)
 # this reports 703 rows in 1 column, but there's more info in the matrix
 plot(mean.word.use.m, type = "h", main = "Mean word usage patterns in Melville's markings in Shakespeare",
-     ylab = "mean word use", xlab = "node (each instance of marking)")
+     ylab = "mean word use", xlab = "nodes (each marking): 
+     1-298, comedies; 299-366, histories; 367-89, other; 390-682, tragedies")
 # using scale to method has the effect of sub- tracting away the expected value 
 # (expected as calculated by the overall mean) and then showing only the deviations from the mean
 scale(mean.word.use.m)
 plot(scale(mean.word.use.m), type = "h", main = "Scaled mean word usage patterns in Melville's markings in Shakespeare",
-     ylab = "mean word use", xlab = "node (each instance of marking)") 
+     ylab = "mean word use", xlab = "nodes (each marking): 
+     1-298, comedies; 299-366, histories; 367-89, other; 390-682, tragedies") 
 # 0 on the y-axis corresponds to the mean across the entire set of markings
 mean.word.use.m[order(mean.word.use.m, decreasing=TRUE),]
 # calculate TTR for first node
@@ -51,5 +53,5 @@ ttr.l <- lapply(div.raws.l, function(x) {length(x)/sum(x)*100})
 ttr.m <- do.call(rbind, ttr.l)
 ttr.m[order(ttr.m, decreasing = TRUE),]
 plot(ttr.m, type = "h", main = "Type-token ratios in Melville's markings in Shakespeare",
-     ylab = "lexical variety", xlab = "node (each instance of marking): 
-     1-295, comedies; 296-363, histories; 364-703, tragedies")
+     ylab = "lexical variety", xlab = "nodes (each marking): 
+     1-298, comedies; 299-366, histories; 367-89, other; 390-682, tragedies")
