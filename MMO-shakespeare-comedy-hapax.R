@@ -32,7 +32,7 @@ for(i in 1:length(divs.ns.l)){
   #remove any remaining whitespace created from culled punctuation
   word.v <- word.v[which(word.v!="")]
   #create a list of the relevant nodes and their word content
-  divs.tragedy.l[[div.content]] <- word.v
+  divs.comedy.l[[div.content]] <- word.v
   #calculate frequencies
   div.freqs.t <- table(word.v)
   div.raws.l[[div.content]] <- div.freqs.t
@@ -41,7 +41,6 @@ for(i in 1:length(divs.ns.l)){
 #for output varieties
 
 #outputs sequential node list and word tokens for the full object
-(divs.comedy.l)
 divs.comedy.l
 #outputs nodes and word tokens for the full object, with raw word counts in nodes
 div.raws.l
