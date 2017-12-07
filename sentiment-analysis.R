@@ -41,13 +41,13 @@ words_sentiment %>% ggplot(aes(x = index, y = net_sentiment, fill = file)) +
   scale_x_continuous("Location in the volume") + 
   scale_y_continuous("Bing net Sentiment")
 
-words_sentiment <- inner_join(hmWords,
+HMwords_sentiment <- inner_join(hmWords,
                               get_sentiments("bing")) %>%
   count(file, index = round(line_number/ max(line_number) * 100 / 5) * 5, sentiment) %>%
   spread(sentiment, n, fill = 0) %>%
   mutate(net_sentiment = positive - negative)
 
-words_sentiment %>% ggplot(aes(x = index, y = net_sentiment, fill = file)) + 
+HMwords_sentiment %>% ggplot(aes(x = index, y = net_sentiment, fill = file)) + 
   geom_bar(stat = "identity", show.legend = FALSE) + 
   facet_wrap(~ file) + 
   scale_x_continuous("Location in the volume") + 
@@ -72,6 +72,8 @@ bing_word_counts %>%
 
 library(wordcloud)
 library(reshape2)
+
+# create a sentiment wordcloud 
 
 hmWords %>%
   inner_join(get_sentiments("bing")) %>%
