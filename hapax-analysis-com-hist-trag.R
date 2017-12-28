@@ -5,7 +5,7 @@ library(XML)
 doc <- xmlTreeParse("460-markings-only.xml", useInternalNodes=TRUE)
 #retrieve specified nodes from the doc object with an XPath
 #expression that id's desired attribute values and excludes others
-divs.ns.l <- getNodeSet(doc, "/body//div[@play='5a' or @play='6b' or @play='4c']")
+MMdivs.ns.l <- getNodeSet(doc, "/body//div[@play='5a']")
 #the following two list objects store the results of the
 #succeeding forloop
 divs.ns.l
