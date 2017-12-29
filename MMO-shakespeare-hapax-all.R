@@ -1,9 +1,8 @@
-setwd("~/Desktop/git-space/ranalysis/")
-source("~/Desktop/Jockers-TextAnalysisWithR/code/mmo-shakespeare-functions.R")
+setwd(" ")
 #load xml package
 library(XML)
 #load the xml file as a document object
-doc <- xmlTreeParse("460.xml", useInternalNodes=TRUE)
+doc <- xmlTreeParse("460-markings-only.xml", useInternalNodes=TRUE)
 #retrieve specified nodes from the doc object with an XPath
 #expression that id's desired attribute values and excludes others
 divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM']
@@ -52,5 +51,6 @@ div.freqs.t
 all.hapax.v <- sapply(div.raws.l, function(x) sum(x == 1))
 all.lengths.m <- do.call(rbind, lapply(div.raws.l,sum))
 hapax.percentage <- all.hapax.v / all.lengths.m
-barplot(hapax.percentage, beside=T,col="grey", names.arg = seq(1:length(div.freqs.l)))
+barplot(hapax.percentage, main = "Hapax analysis of all Melville's markings in Shakespeare's plays",
+        xlab = "Each marking", ylab = "Lexical variety", beside=T, col="grey", names.arg = seq(1:length(div.freqs.l)))
 

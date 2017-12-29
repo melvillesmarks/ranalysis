@@ -1,0 +1,13 @@
+,Source,Target,Weight,Type
+1,hawthorne-and-his-mosses,melville-marks-in-shakespeare,2,undirected
+2,hawthorne-and-his-mosses,moby-dick,6,undirected
+3,hawthorne-and-his-mosses,shakespeare-complete,4,undirected
+4,melville-marks-in-shakespeare,hawthorne-and-his-mosses,2,undirected
+5,melville-marks-in-shakespeare,moby-dick,3,undirected
+6,melville-marks-in-shakespeare,shakespeare-complete,4,undirected
+7,moby-dick,hawthorne-and-his-mosses,6,undirected
+8,moby-dick,melville-marks-in-shakespeare,3,undirected
+9,moby-dick,shakespeare-complete,5,undirected
+10,shakespeare-complete,hawthorne-and-his-mosses,4,undirected
+11,shakespeare-complete,melville-marks-in-shakespeare,4,undirected
+12,shakespeare-complete,moby-dick,5,undirected

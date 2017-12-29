@@ -18,4 +18,5 @@ for(i in 1:length(divs.ns.l)){
 }
 div.freqs.un.v <- unlist(div.freqs.l)
 sorted.div.freqs.v <- sort(div.freqs.un.v, decreasing=T)
+stylo(sorted.div.freqs.v)
 write.table(sorted.div.freqs.v, "460.checkmarks.tragedies.freqs.v.sorted.txt")

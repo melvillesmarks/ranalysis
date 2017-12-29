@@ -1,7 +1,7 @@
 # stylo experiments
 setwd("~/GitSpace/ranalysis/")
 my.corpus = load.corpus.and.parse(files = c("460-markings-only.xml"),
-                                  markup.type = "xml", ngram.size = 1)
+                                  markup.type = "xml", ngram.size = 2)
 
 make.frequency.list(my.corpus, value = FALSE, head = NULL,
                     relative = TRUE)

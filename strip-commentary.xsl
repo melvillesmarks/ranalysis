@@ -8,7 +8,12 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="div[@mode='commentary']|commentary"/>
+    <xsl:template match="div[@mode='commentary']|commentary"></xsl:template>
+    <xsl:template match="div[@type='annotation']|annotation"/>
+    <xsl:template match="div[@type2='annotation']|annotation"/>
+    <xsl:template match="div[@type3='annotation']|annotation"/>
+    <xsl:template match="div[@type4='annotation']|annotation"/>
+    <xsl:template match="div[@type='notation']|notation"/>
     
 </xsl:stylesheet>
 

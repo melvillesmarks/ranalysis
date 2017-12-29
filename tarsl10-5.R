@@ -2,9 +2,11 @@
 library(XML)
 #load the xml file as a document object
 doc <- xmlTreeParse("460.xml", useInternalNodes=TRUE)
+
+
 #retrieve specified nodes from the doc object with an XPath
 #expression that id's desired attribute values and excludes others
-divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM'][@*='underline' or @*='checkmark'][not(contains(@mode, 'commentary'))][not(contains(@type, 'notation'))]")
+divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM'][not(contains(@mode, 'commentary'))][not(contains(@type, 'notation'))]")
 #the following two list objects store the results of the
 #succeeding forloop
 divs.ns.l
@@ -39,9 +41,8 @@ for(i in 1:length(divs.ns.l)){
 #outputs sequential node list and word tokens for the full object
 divs.checkmark.underline.l
 #outputs nodes and word tokens for the full object, with raw word counts in nodes
-div.raws.l
 #outputs nodes and word tokens for the full object, with relative word frequencies in nodes
-div.freqs.l
+
 #isolates instances and node-level relative frequency for specified words
 love <- do.call(rbind, lapply(div.freqs.l, '[', 'love'))
 death <- do.call(rbind, lapply(div.freqs.l, '[', 'death'))

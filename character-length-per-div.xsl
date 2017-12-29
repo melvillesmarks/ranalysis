@@ -9,7 +9,7 @@
     <xsl:output method="text" />
     <xsl:template match="/">
        
-        <xsl:for-each select="body/div">
+        <xsl:for-each select="/body/div">
             <p>
                 <xsl:value-of select="@num" /> <xsl:value-of select="string-length(.)" /> characters
             </p>

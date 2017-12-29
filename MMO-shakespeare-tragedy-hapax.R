@@ -3,14 +3,13 @@ source("~/Desktop/Jockers-TextAnalysisWithR/code/mmo-shakespeare-functions.R")
 #load xml package
 library(XML)
 #load the xml file as a document object
-doc <- xmlTreeParse("460.xml", useInternalNodes=TRUE)
+doc <- xmlTreeParse("460-markings-only.xml", useInternalNodes=TRUE)
 #retrieve specified nodes from the doc object with an XPath
 #expression that id's desired attribute values and excludes others
-divs.ns.l <- getNodeSet(doc, "/body//*[@attribution='HM'][@mode='tragedy']
-                        [not(contains(@mode, 'commentary'))][not(contains(@type, 'notation'))]")
+divs.ns.l <- getNodeSet(doc, "/body//div[@mode='tragedy']")
 #the following two list objects store the results of the
 #succeeding forloop
-divs.ns.l
+length(divs.ns.l)
 divs.tragedy.l <- list()
 div.freqs.l <- list()
 div.raws.l <- list()
@@ -52,5 +51,8 @@ div.freqs.t
 tragedy.hapax.v <- sapply(div.raws.l, function(x) sum(x == 1))
 tragedy.lengths.m <- do.call(rbind, lapply(div.raws.l,sum))
 hapax.percentage <- tragedy.hapax.v / tragedy.lengths.m
-barplot(hapax.percentage, beside=T,col="grey", names.arg = seq(1:length(div.freqs.l)))
+barplot(hapax.percentage, main = "Hapax analysis in Shakespeare's Tragedies", 
+        beside=T,col="grey", 
+        names.arg = seq(1:length(div.freqs.l)))
+
 
