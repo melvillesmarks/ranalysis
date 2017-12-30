@@ -5,6 +5,7 @@ library(XML)
 doc <- xmlTreeParse("460-markings-only.xml", useInternalNodes=TRUE)
 #retrieve specified nodes from the doc object with an XPath
 
+#the following code blocks create hapax percentages for each play, which can then be visualized as bar graphs
 
 #get Measure for Measure hapax
 MMdivs.ns.l <- getNodeSet(doc, "/body//div[@play='5a']")
@@ -330,11 +331,28 @@ Othellohapax.percentage <- Othello.hapax.v / Othello.lengths.m
 
 #combine hapax percentages to be visualized
 library(zoo)
-z <- merge(zoo(Timonhapax.percentage), zoo(KLhapax.percentage), 
-           zoo(Hamhapax.percentage), zoo(Othellohapax.percentage))
-colnames(z) <- c("Timon of Athens", "King Lear", "Hamlet", "Othello")
+#invoke "zoo" to merge each hapax % variable
+
+#this plots three plays in each category
+z <- merge(zoo(MMhapax.percentage), zoo(H8hapax.percentage), 
+           zoo(AChapax.percentage))
+#label each graph as a column, following the order of each "zoo" invocation" 
+colnames(z) <- c("Measure for Measure", "Henry VIII", "Antoy and Cleopatra")
+
 plot(z, main = "Lexical richness comparison, with hapax analysis", 
      xlab = "# of markings", 
      type = "h", 
      plot.type = "multiple", 
-     col = 8, lwd = 8) 
+     col = 1, lwd = 10)
+
+#this plots four tragedies that HM mentioned
+
+z <- merge(zoo(Timonhapax.percentage), zoo(KLhapax.percentage), 
+           zoo(Hamhapax.percentage), zoo(Othellohapax.percentage))
+colnames(z) <- c("Timon of Athens", "King Lear", "Hamlet", "Othello")
+
+plot(z, main = "Lexical richness comparison, with hapax analysis", 
+     xlab = "# of markings", 
+     type = "h", 
+     plot.type = "multiple", 
+     col = 1, lwd = 10) 
