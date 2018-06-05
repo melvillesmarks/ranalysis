@@ -1,0 +1,17 @@
+install.packages("stylo")
+gui stylo
+gui.stylo
+library(stylo)
+install.packages("stylo")
+library(stylo)
+stylo()
+setwd("~/GitSpace/ranalysis/corpus")
+hm.text <- scan("hm-readings-all-words/milton-hm-markings-only.txt", what = "character", sep = "\n")
+jm.text <- scan("milton-complete-works.txt", what = "character", sep = "\n")
+install.packages("qdap")
+library("qdap")
+install.packages("rJava")
+library("rJava")
+install.packages("rJava")
+install.packages("qdap")
+library("rJava")

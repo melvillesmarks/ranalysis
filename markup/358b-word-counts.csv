@@ -1,0 +1,59 @@
+<html>
+   <h2>Word counts of Melville's markings in each book of </h2>
+   <body>
+      <table border="2">
+         <tr>
+            <th>Section</th>
+            <th>Word Count</th>
+            <tr>
+               <td>Paradise Lost</td>
+               <td>6696</td>
+            </tr>
+            <tr>
+               <td>Paradise Regained</td>
+               <td>1483</td>
+            </tr>
+            <tr>
+               <td>The Verse</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <td>Samson Agonistes</td>
+               <td>985</td>
+            </tr>
+            <tr>
+               <td>Comus</td>
+               <td>1143</td>
+            </tr>
+            <tr>
+               <td>Lycidas</td>
+               <td>262</td>
+            </tr>
+            <tr>
+               <td>Life of Milton</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <td>Complimentary Verses</td>
+               <td>0</td>
+            </tr>
+            <tr>
+               <td>Il Penseroso</td>
+               <td>56</td>
+            </tr>
+            <tr>
+               <td>L'Allegro</td>
+               <td>51</td>
+            </tr>
+            <tr>
+               <td>Misc. Poems</td>
+               <td>77</td>
+            </tr>
+            <tr>
+               <td>Sonnets</td>
+               <td>64</td>
+            </tr>
+         </tr>
+      </table>
+   </body>
+</html>
