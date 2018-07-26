@@ -5,7 +5,7 @@
     
     <xsl:template match="/">
         <html>
-            <h2>Word counts of Melville's markings in each book of Homer's Iliad</h2>
+            <h2>Word counts of Melville's markings in each of Shakespeare's plays</h2>
             <body>
         <table border="2">
             <tr>

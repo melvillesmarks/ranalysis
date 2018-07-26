@@ -1,0 +1,19 @@
+install.packages("stylo")
+gui stylo
+gui.stylo
+library(stylo)
+install.packages("stylo")
+library(stylo)
+stylo()
+setwd("~/GitSpace/ranalysis/")
+library(XML)
+doc1 <- xmlTreeParse("460-rewrite-by-play-title-no-heads.xml", useInternalNodes=TRUE)
+divs.ns.l1 <- getNodeSet(doc1, "/body//*")
+doc2 <- xmlTreeParse("358b-by-work-title-no-heads.xml", useInternalNodes=TRUE)
+divs.ns.l2 <- getNodeSet(doc2, "/body//*")
+doc3 <- xmlTreeParse("277-rewrite-by-section-no-heads.xml", useInternalNodes = TRUE)
+divs.ns.l3 <- getNodeSet(doc3, "/body//*")
+divs.ns.l <- c(divs.ns.l1, divs.ns.l2, divs.ns.l3)
+div.freqs.l <- list()
+div.raws.l <- list()
+for(i in 1:length(divs.ns.l)){
